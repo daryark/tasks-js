@@ -1,11 +1,11 @@
-// import "./js/module1/module1-1";
-// import "./js/module1/module1-2";
+import "./js/module1/module1-1.js";
+import "./js/module1/module1-2.js";
 
-// import "./js/module2/module2-1";
-// import "./js/module2/module2-2";
+import "./js/module2/module2-1.js";
+import "./js/module2/module2-2.js";
 
-// import "./js/module3/module3-1";
-// import "./js/module3/module3-3";
+import "./js/module3/module3-1.js";
+import "./js/module3/module3-2.js";
 
 // import "./js/module4/module4-1";
 // import "./js/module4/module4-2";
