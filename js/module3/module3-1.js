@@ -92,18 +92,18 @@
 //
 //
 //
-// ? WHY THE ELEMENT OF ARRAY "tiger" STAYS THE SAME IN animals WHEN IT CHANGES IN clones?
-// !console.log will be: bear bear
-// !                     tiger sheep
-//
-let animals = [{ type: "lion" }, "tiger"];
-let clones = animals.slice();
+// // ? WHY THE ELEMENT OF ARRAY "tiger" STAYS THE SAME IN animals WHEN IT CHANGES IN clones?
+// // !console.log will be: bear bear
+// // !                     tiger sheep
+// //
+// let animals = [{ type: "lion" }, "tiger"];
+// let clones = animals.slice();
 
-clones[0].type = "bear";
-clones[1] = "sheep";
+// clones[0].type = "bear";
+// clones[1] = "sheep";
 
-console.log(animals[0].type, clones[0].type);
-console.log(animals[1], clones[1]);
+// console.log(animals[0].type, clones[0].type);
+// console.log(animals[1], clones[1]);
 //
 //
 //
@@ -118,18 +118,67 @@ const cart = {
 		console.log(this.items);
 	},
 	remove(productName) {
-		for (item of items) {
-			if (item.name === productName) {
+		for (let i = 0; i < this.items.length; i += 1) {
+			if (this.items[i].name === productName.name) {
+				this.items.splice(i, 1);
 			}
 		}
+		console.log(this.items);
 	},
-	clear() {},
-	countTotalPrice() {},
-	increaseQuantity(productName) {},
-	decreaseQuantity(productName) {},
+	clear() {
+		this.items = [];
+
+		console.log(this.items);
+	},
+	countTotalPrice() {
+		let total = 0;
+		for (const item of this.items) {
+			total += item.price;
+		}
+		console.log(total);
+	},
+	increaseQuantity(productName) {
+		for (let i = 0; i < this.items.length; i += 1) {
+			if (this.items[i].name === productName.name) {
+				if (!this.items[i].quantity) {
+					//fix: change this in destructurization
+					this.items[i].quantity = 1;
+				}
+
+				this.items[i].quantity += 1;
+			}
+		}
+		console.log(this.items);
+	},
+	decreaseQuantity(productName) {
+		for (let i = 0; i < this.items.length; i += 1) {
+			if (this.items[i].name === productName.name) {
+				if (this.items[i].quantity < 2) {
+					this.items.splice(i, 1);
+				}
+
+				this.items[i].quantity -= 1;
+			}
+		}
+		console.log(this.items);
+	},
 };
 
 cart.add({ name: "🍎", price: 50 });
-// cart.add({ name: "🍇", price: 70 });
-// cart.add({ name: "🍋", price: 60 });
-// cart.add({ name: "🌰", price: 110 });
+cart.add({ name: "🍇", price: 70 });
+cart.add({ name: "🍋", price: 60 });
+cart.add({ name: "🌰", price: 110 });
+
+// cart.remove({ name: "🍎", price: 50 });
+
+// cart.clear();
+
+cart.countTotalPrice();
+
+cart.increaseQuantity({ name: "🌰", price: 110 });
+cart.increaseQuantity({ name: "🌰", price: 110 });
+cart.increaseQuantity({ name: "🍋", price: 60 });
+
+cart.decreaseQuantity({ name: "🌰", price: 110 });
+cart.decreaseQuantity({ name: "🌰", price: 110 });
+cart.decreaseQuantity({ name: "🌰", price: 110 });
