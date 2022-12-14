@@ -25,15 +25,15 @@
 // }
 
 //refactor (with arrow function)
-const findLongestWord = (string) => {
-	let longestWord = "";
-	for (let word of string.split(" ")) {
-		if (longestWord.length < word.length) {
-			longestWord = word;
-		}
-	}
-	console.log(longestWord);
-};
+// const findLongestWord = (string) => {
+// 	let longestWord = "";
+// 	for (let word of string.split(" ")) {
+// 		if (longestWord.length < word.length) {
+// 			longestWord = word;
+// 		}
+// 	}
+// 	console.log(longestWord);
+// };
 
 //task Autotask 24/32 module 2 .
 //f.e filterArray([1, 2, 3, 4, 5], 4); will return [5]
@@ -60,11 +60,11 @@ const findLongestWord = (string) => {
 // }
 
 //task Autotask 25/32 module 2 .
-function includes(array, value) {
-	for (const variable of array) {
-		if (variable === value) {
-			return true;
-		}
-	}
-	return false;
-}
+// function includes(array, value) {
+// 	for (const variable of array) {
+// 		if (variable === value) {
+// 			return true;
+// 		}
+// 	}
+// 	return false;
+// }

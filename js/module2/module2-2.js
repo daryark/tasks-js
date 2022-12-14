@@ -5,6 +5,8 @@
 // 		let temp = start; //6
 // 		start = end + 1;
 // 		end = temp + 1;
+//refactor
+// [end, start] = [start, end]; // Destructurization into exsisting vars (rigth part) from array in left part;
 // 		step = -step;
 // 		isReverse = true;
 
