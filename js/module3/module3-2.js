@@ -75,62 +75,42 @@
 // 		return this.items;
 // 	},
 // 	add(product) {
-// 		this.items.push(product);
-
+// 		this.items.push({ ...product, quantity: 1 });
 // 		return this.items;
 // 	},
-// remove(productName) {
-//err   this.map()
-// const newArr = this.items.map((item) => (item.name === productName ? item : `Error! No ${item.name} in the cart.`));
+// 	remove(productName) {
+// 		//works filter - check length before and after filter , err || remove successfully, after checking two arrs (prev and after). Don't forget to rewrite initial arr for the filtered one.
+// 		let newArr = this.items.filter((item) => item.name !== productName);
 
-// const newArr = this.map(function (item) {
-// 	return item.name === productName ? item : `Error! No ${item.name} in the cart.`;
-// });
-//filter - check length before and after filter , err || remove success...
+// 		this.items.length !== newArr.length
+// 			? alert(`Successfully removed ${productName} from the cart.`)
+// 			: alert(`Error! No ${productName} in the cart.`);
 
-// return newArr;
-// },
-
-// clear() {
-// 	this.items = [];
-
-// 	return this.items;
-// },
-// countTotalPrice() {
-// 	let total = 0;
-// 	for (const item of this.items) {
-// 		total += item.price;
-// 	}
-// 	return total;
-// },
-// increaseQuantity(productName) {
-// const { items } = this;
-
-// for (let i = 0; i < items.length; i += 1) {
-// 	const { name } = items[i];
-
-// 	if (name === productName) {
-// 		if (!items[i].quantity) {
-// 			//fix: change this in destructurization
-// 			items[i].quantity = 1;
-// 		}
-
-// 		items[i].quantity += 1;
-// 	}
-// }
-
-// 		this.map((item) => (item.name === productName ? (item.quantity += 1) : item.quantity));
-
-// 		return this.items;
+// 		return (this.items = [...newArr]);
+// 	},
+// 	clear() {
+// 		return (this.items = []);
+// 	},
+// 	countTotalPrice() {
+// 		return this.items.reduce((total, item) => total + item.price, 0);
+// 	},
+// 	increaseQuantity(productName) {
+// 		return this.items.map((item) =>
+// 			item.name === productName ? (item.quantity += 1) : item.quantity
+// 		);
+// 		// c: Pay attention that this variant won't work:   this.items.map(({name, quantity}) => name === productName ? (quantity += 1) : quantity) because destructurization will separate quantity into single variable that is not linked to the obj
 // 	},
 // 	decreaseQuantity(productName) {
 // 		for (let i = 0; i < this.items.length; i += 1) {
 // 			if (this.items[i].name === productName) {
-// 				// if (this.items[i].quantity === 2) {
-// 				// 	this.items[i].delete(quantity);
-// 				// }
 // 				if (this.items[i].quantity < 2) {
-// 					this.items.splice(i, 1);
+// 					const messageToDelete = confirm(
+// 						`You have only one ${productName} in the cart, wanna delete product ?`
+// 					)
+// 						? this.items.splice(i, 1)
+// 						: this.items;
+
+// 					return this.items;
 // 				}
 
 // 				this.items[i].quantity -= 1;
@@ -141,25 +121,26 @@
 // };
 
 // console.log(cart.add({ name: "🍎", price: 50 }));
-// // console.log(cart.add({ name: "🍇", price: 70 }));
-// // console.log(cart.add({ name: "🍋", price: 60 }));
-// // console.log(cart.add({ name: "🌰", price: 110 }));
+// console.log(cart.add({ name: "🍇", price: 70 }));
+// console.log(cart.add({ name: "🍋", price: 60 }));
+// console.log(cart.add({ name: "🌰", price: 110 }));
 // console.log(cart.countTotalPrice());
 
-// // console.log(cart.remove("🍎"));
+// console.log(cart.remove("🍎"));
+// console.log(cart.remove("🍌"));
 
 // console.log(cart.clear());
 // //----------------------------------------------
-// // cart.add({ name: "🍇", price: 70 });
-// // cart.add({ name: "🍋", price: 60 });
-// // cart.add({ name: "🌰", price: 110 });
-// cart.increaseQuantity("🌰");
-// cart.increaseQuantity("🌰");
-// cart.increaseQuantity("🍋");
+// console.log(cart.add({ name: "🍇", price: 70 }));
+// console.log(cart.add({ name: "🍋", price: 60 }));
+// console.log(cart.add({ name: "🌰", price: 110 }));
+// console.log(cart.increaseQuantity("🌰"));
+// console.log(cart.increaseQuantity("🌰"));
+// console.log(cart.increaseQuantity("🍋"));
 
-// cart.decreaseQuantity("🌰");
-// cart.decreaseQuantity("🌰");
-// cart.decreaseQuantity("🌰");
+// console.log(cart.decreaseQuantity("🌰"));
+// console.log(cart.decreaseQuantity("🌰"));
+// console.log(cart.decreaseQuantity("🌰"));
 
 // f.e. variant 1
 // const atTheOldToad = {
@@ -275,17 +256,3 @@
 //
 //
 //
-
-// const data = {
-// 	user: { name: "dasha", age: 24 },
-// 	city: "Melbourn",
-// };
-
-// const myFn = () => {
-// 	const {
-// 		user: { age },
-// 		city,
-// 	} = data;
-// 	// {name} = user;
-// 	console.log(age);
-// }
