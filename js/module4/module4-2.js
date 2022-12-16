@@ -204,3 +204,46 @@
 // 		"male"
 // 	)
 // );
+
+// // // Створити функцію яка приймає марку авто, функція повертає в консоль кількість знайдених авто , марку авто, модель і вартість авто
+// // // Повертає стрінгу з знайденими авто
+
+// // // Кількість знайдених автомобілів 2:
+// // // 1. Honda Accord, ціна 20000
+// // // 2. Honda Civic, ціна 12000
+
+// // // // Якщо не було знайдено жодного авто ми маємо вивести
+
+// // // // Вибачте але за вашим пошуком жодного авто не було знайдено.
+
+//task from other group practice. Need to make an arr of "car" by their names with reduce
+// const cars = [
+// 	{
+// 		car: "Honda",
+// 		type: "Civic",
+// 		price: 12000,
+// 	},
+// 	{
+// 		car: "Audi",
+// 		type: "Q7",
+// 		price: 40000,
+// 	},
+// 	{
+// 		car: "BMW",
+// 		type: "5 siries",
+// 		price: 9000,
+// 	},
+// 	{
+// 		car: "Honda",
+// 		type: "Accord",
+// 		price: 20000,
+// 	},
+// 	{
+// 		car: "Volvo",
+// 		type: "XC60",
+// 		price: 7000,
+// 	},
+// ];
+
+// const arrOfCarNames = cars.reduce((acc, item) => [...acc, item.car], []);
+// console.log(arrOfCarNames);

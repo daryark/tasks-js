@@ -10,7 +10,7 @@ import "./js/module3/module3-2.js";
 import "./js/module4/module4-1.js";
 import "./js/module4/module4-2.js";
 
-// import "./js/module5/module5-1.js";
+import "./js/module5/module5-1.js";
 // import "./js/module5/module5-2.js";
 
 // import "./js/module6/module6-1.js";
