@@ -43,3 +43,76 @@
 
 // console.log(pizzaPalace.order("Viennese"));
 // console.log(pizzaPalace.order("Four meats"));
+
+//
+//
+//
+
+//task 10/20 Module 5
+// class Storage {
+// 	constructor(items) {
+// 		this.items = items;
+// 	}
+
+// 	getItems() {
+// 		return this.items;
+// 	}
+
+// 	addItem(newItem) {
+// 		this.items.push(newItem);
+// 	}
+
+// 	removeItem(itemToRemove) {
+// 		this.items = this.items.filter((item) => item !== itemToRemove);
+// 	}
+// }
+
+// const storage = new Storage(["Nanitoids", "Prolonger", "Antigravitator"]);
+// console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
+
+// storage.addItem("Droid");
+// console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
+
+// storage.removeItem("Prolonger");
+// console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
+
+//
+//
+//
+//
+//task 11/20 Module 5
+// class StringBuilder  {
+//   constructor (initialValue) {
+//     this.value = initialValue;
+//   }
+
+//   getValue () {
+//     return this.value;
+//   }
+
+//   padEnd(str) {
+//     this.value += str;
+//   }
+
+//   padStart(str) {
+//     this.value = str + this.value;
+//   }
+
+//   padBoth(str) {
+//     this.value = str + this.value + str;
+//   }
+// }
+
+// // Change code above this line
+// const builder = new StringBuilder(".");
+// console.log(builder.getValue()); // "."
+// builder.padStart("^");
+// console.log(builder.getValue()); // "^."
+// builder.padEnd("^");
+// console.log(builder.getValue()); // "^.^"
+// builder.padBoth("=");
+// console.log(builder.getValue()); // "=^.^="
+//
+//
+//
+//
