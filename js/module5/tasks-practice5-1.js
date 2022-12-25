@@ -126,10 +126,10 @@
 // Створіть аналогічну функцію sumArgs(), яка підсумовуватиме всі свої аргументи:
 // Для вирішення застосуйте метод reduce до arguments, використовуючи spread, call, apply або "позичення методу".
 
-function sumArgs() {
-	// return [...arguments].reduce((acc, num) => acc + num, 0);
-	return [].reduce.call(arguments, (acc, num) => acc + num, 0);
-}
+// function sumArgs() {
+// 	// return [...arguments].reduce((acc, num) => acc + num, 0);
+// 	return [].reduce.call(arguments, (acc, num) => acc + num, 0);
+// }
 
-console.log(sumArgs(1, 2, 3));
+// console.log(sumArgs(1, 2, 3));
 //-----------------
